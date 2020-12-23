@@ -1,0 +1,62 @@
+package test;
+
+import java.util.Arrays;
+
+public class Arr {
+
+    public static void retArr (int[] a) { //Input an array to be a parameter in the method....
+        //Single Dimensional Array....
+        int m = a[3];
+        for (int i = 0 ;i<a.length;i++) {
+            if (m<a[i]){/*if the array is {1,2,3,4,5};
+                           while m = 1 <for example> 1<2 (Right)  */
+                m = a[i]; //then it will equalise both value of <m> and a[i];
+                //for each iteration the equation get equaled till actualise the the condition of {if}...
+                System.out.println(m);
+            }
+
+        }
+
+    }
+    //Multi-Dimensional Array
+    public static void retMulArr () {
+        int c = 2;
+        int a [][] = new int [3][3];
+        int in = 0;
+        for (int i = 0 ; i<3;i++){
+            for (int y =0 ;y<3; y++){
+                a[i][y] = in++;
+                System.out.print(a[i][y]+ " ");
+            }
+            System.out.println();
+        }
+    }
+    //Copying Array:
+    public static void arrCopy(){
+        int a[] = {1,2,3,4,5,6,7};
+        int [] b = new int[6];
+        System.arraycopy(a,0,b,0,6);
+        System.out.println(Arrays.toString(b));//to convert from Array object into a string..
+    }
+    //Cloning Arrays:
+    public static void CloneArr (){
+        int [] a = {1,2,3,4,5,6,7,8,9};
+        int [] b = a.clone();
+        System.out.println(Arrays.toString(b));
+    }
+
+    public static void main (String [] args){
+        int []e = {1,2,3,4,6,99};
+        retArr(e);
+        retMulArr();
+        arrCopy();
+        CloneArr();//Cloning Arrays Like Cloning Objects...
+    }
+
+
+}
+//Note:
+       /* while m = ArrayName [Num]; This number will be excluded
+          while being input within iteration and conditional if...
+          So it will starts from the next item in the array sequence.
+        */
